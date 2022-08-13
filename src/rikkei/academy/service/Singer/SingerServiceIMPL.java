@@ -1,6 +1,7 @@
-package rikkei.academy.service;
+package rikkei.academy.service.Singer;
 
 import rikkei.academy.model.Singer;
+import rikkei.academy.service.Singer.ISingerService;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,12 +18,6 @@ public class SingerServiceIMPL implements ISingerService {
 
     }
 
-
-    @Override
-    public List<Singer> sortName() {
-        Collections.sort(singerList);
-        return singerList;
-    }
 
     @Override
     public List<Singer> findAll() {

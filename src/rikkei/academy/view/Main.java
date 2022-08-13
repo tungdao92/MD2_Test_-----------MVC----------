@@ -5,40 +5,33 @@ import java.util.Scanner;
 public class Main {
     public Main(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("1: Show List Singer");
-        System.out.println("2: Creat Singer");
-        System.out.println("3: Delete Singer");
-        System.out.println("4: Update Singer");
-        System.out.println("5: Detail Singer ");
-        System.out.println("6: Sort Singer");
+        System.out.println("MENU");
+        System.out.println("1: View Singer");
+        System.out.println("2: View Song");
         System.out.println("0: Exit");
-        int choiceMenu = scanner.nextInt();
-        switch (choiceMenu){
-            case 0:
-                System.exit(0);
-                break;
+
+        int choice = scanner.nextInt();
+        while (choice != 1 && choice !=2 && choice != 0){
+            System.out.println("MENU");
+            System.out.println("1: View Singer");
+            System.out.println("2: View Song");
+            System.out.println("0: Exit");
+            choice = scanner.nextInt();
+        }
+        switch (choice){
             case 1:
-                new SingerView().viewSinger();
+                new SingerView();
                 break;
             case 2:
-                new SingerView().creatSinger();
+                new SongView();
                 break;
-            case 3:
-                new SingerView().removeSinger();
-                break;
-            case 4:
-                new SingerView().editSinger();
-                break;
-            case 5:
-                new SingerView().searchSinger();
-                break;
-            case 6:
-                new SingerView().sortSinger();
-                break;
-
-
+            case 0:
+                System.exit(0);
+            default:
         }
+
     }
+
 
     public static void main(String[] args) {
         new Main();

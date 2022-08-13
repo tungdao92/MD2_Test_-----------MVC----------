@@ -1,9 +1,5 @@
 package rikkei.academy.model;
 
-import rikkei.academy.service.ISingerService;
-
-import java.util.Collections;
-
 public class Singer implements Comparable<Singer> {
     private int id;
     private String name;
