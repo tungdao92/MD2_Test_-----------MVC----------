@@ -6,6 +6,7 @@ public class Song implements Comparable<Song>{
     private int listen;
     private int like;
 
+
     public Song() {
     }
 

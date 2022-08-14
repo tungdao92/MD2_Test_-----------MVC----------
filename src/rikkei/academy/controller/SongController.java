@@ -11,11 +11,22 @@ public class SongController {
     public List<Song> showSong(){
         return iSongService.findAll();
     }
+
+
+
     public List<Song> creatSong(String name){
         return iSongService.save(new Song(showSong().size()+1,name,0,0));
     }
+
+
+
     public List<Song> editSong(int id, String name){
         return iSongService.edit(id, name);
+    }
+
+
+    public List<Song> deleteSong(int id){
+        return iSongService.deleteById(id);
     }
 
 

@@ -2,6 +2,7 @@ package rikkei.academy.service.Singer;
 
 import rikkei.academy.model.Singer;
 import rikkei.academy.service.Singer.ISingerService;
+import rikkei.academy.service.Song.SongServiceIMPL;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,11 +11,11 @@ import java.util.List;
 public class SingerServiceIMPL implements ISingerService {
     public static List<Singer> singerList = new ArrayList<>();
     static {
-        singerList.add(new Singer(1,"Phu Le",22));
-        singerList.add(new Singer(2,"BangG", 32));
-        singerList.add(new Singer(3,"Quag Ha",20));
-        singerList.add(new Singer(4,"Phuc Duc", 24));
-        singerList.add(new Singer(5,"BangG",20));
+        singerList.add(new Singer(1,"PhuL",22));
+        singerList.add(new Singer(2,"BanG", 32));
+        singerList.add(new Singer(3,"Quag",20));
+        singerList.add(new Singer(4,"Phuk", 24));
+        singerList.add(new Singer(5,"BanG",20));
 
     }
 

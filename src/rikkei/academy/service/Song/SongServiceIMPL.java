@@ -1,15 +1,16 @@
 package rikkei.academy.service.Song;
 import rikkei.academy.model.Song;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class SongServiceIMPL implements ISongService{
     public static List<Song> songList = new ArrayList<>();
     static {
        songList.add(new Song(1,"Love",0,0));
-       songList.add(new Song(2,"You",0,0));
+       songList.add(new Song(2,"Youu",0,0));
        songList.add(new Song(3,"Like",0,0));
-       songList.add(new Song(4,"Me",0,0));
+       songList.add(new Song(4,"Meee",0,0));
     }
 
 
@@ -26,12 +27,15 @@ public class SongServiceIMPL implements ISongService{
 
     @Override
     public List<Song> deleteById(int id) {
-        return null;
+        songList.remove(id -1);
+        updateId();
+        return songList;
     }
 
     @Override
     public List<Song> findById(int id) {
-        return null;
+        ;
+        return songList;
     }
 
 
@@ -43,7 +47,9 @@ public class SongServiceIMPL implements ISongService{
 
     @Override
     public List<Song> sort() {
-        return null;
+        Collections.sort(songList);
+        updateId();
+        return songList;
     }
     public void updateId() {
         for (int i = 0; i < songList.size(); i++) {
