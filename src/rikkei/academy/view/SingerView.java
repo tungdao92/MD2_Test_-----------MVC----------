@@ -117,7 +117,7 @@ public class SingerView {
 
     public SingerView(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nMENU SINGERr");
+        System.out.println("\nMENU SINGER");
         System.out.println("1: Show List Singer");
         System.out.println("2: Creat Singer");
         System.out.println("3: Update Singer");

@@ -10,7 +10,7 @@ import static jdk.nashorn.internal.runtime.UnwarrantedOptimismException.isValid;
 
 public class SongView {
 //    Scanner scanner = new Scanner(System.in);
-static SongController songController = new SongController();
+    SongController songController = new SongController();
 
     public void showListSong(){
         System.out.println("|        STT         NAME        Listen      Like       |");
@@ -98,27 +98,27 @@ static SongController songController = new SongController();
         System.out.println("Listen Rating");
         System.out.println("\n|        STT         NAME        Listen      Like       |");
         List<Song> songList = songController.listenRank();
-        for (Song song: songList) {
-            System.out.println( "----------" + song.getId() + "----------" + song.getName() + "----------" + song.getListen() + "----------" + song.getLike() + "----------");
+        for (int i = 0; i < 5; i++) {
+            System.out.println( "----------" + songList.get(i).getId() + "----------" + songList.get(i).getName() + "----------" + songList.get(i).getListen() + "----------" + songList.get(i).getLike() + "----------");
         }
-        rankSong();
+        backMenu();
     }
 
 
 
     public void likeRank(){
         System.out.println("Like Rating");
-        System.out.println("\n|        STT         NAME        Listen         Like       |");
+        System.out.println("\n|        STT         NAME        Listen      Like       |");
         List<Song> songList = songController.likeRank();
         for (Song song: songList) {
             System.out.println( "----------" + song.getId() + "----------" + song.getName() + "----------" + song.getListen() + "----------" + song.getLike() + "----------");
         }
-        rankSong();
+        backMenu();
     }
 
 
     public void rankSong(){
-        System.out.println("\n\nSong Rating");
+        System.out.println("Song Rating");
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nEnter Any Character Go To Back Song Menu");
         System.out.println("1: Listen Rating");
