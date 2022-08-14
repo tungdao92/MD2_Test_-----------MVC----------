@@ -10,7 +10,7 @@ import static jdk.nashorn.internal.runtime.UnwarrantedOptimismException.isValid;
 
 public class SongView {
 //    Scanner scanner = new Scanner(System.in);
-    SongController songController = new SongController();
+static SongController songController = new SongController();
 
     public void showListSong(){
         System.out.println("|        STT         NAME        Listen      Like       |");
@@ -52,6 +52,7 @@ public class SongView {
     }
 
 
+
     public void deleteSong(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter Id Of The Song You Want To Delete");
@@ -76,6 +77,9 @@ public class SongView {
         }
         backMenu();
     }
+
+
+
     public void detailSong(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter Id Song Want Listen");
@@ -86,23 +90,77 @@ public class SongView {
             System.out.println( "----------" + song.getId() + "----------" + song.getName() + "----------" + song.getListen() + "----------" + song.getLike() + "----------");
         }
         backMenu();
+    }
 
 
+
+    public void listenRank() {
+        System.out.println("Listen Rating");
+        System.out.println("\n|        STT         NAME        Listen      Like       |");
+        List<Song> songList = songController.listenRank();
+        for (Song song: songList) {
+            System.out.println( "----------" + song.getId() + "----------" + song.getName() + "----------" + song.getListen() + "----------" + song.getLike() + "----------");
+        }
+        rankSong();
+    }
+
+
+
+    public void likeRank(){
+        System.out.println("Like Rating");
+        System.out.println("\n|        STT         NAME        Listen         Like       |");
+        List<Song> songList = songController.likeRank();
+        for (Song song: songList) {
+            System.out.println( "----------" + song.getId() + "----------" + song.getName() + "----------" + song.getListen() + "----------" + song.getLike() + "----------");
+        }
+        rankSong();
+    }
+
+
+    public void rankSong(){
+        System.out.println("\n\nSong Rating");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\nEnter Any Character Go To Back Song Menu");
+        System.out.println("1: Listen Rating");
+        System.out.println("2: Like Rating");
+        System.out.println("0: Exit");
+        try {
+            int choice = Integer.parseInt(scanner.nextLine());
+            while (choice != 0 && choice !=1 && choice != 2){
+                 new SongView();
+            }
+            switch (choice){
+                case 1:
+                    listenRank();
+                    break;
+                case 2:
+                    likeRank();
+                    break;
+                case 0:
+                    System.exit(0);
+                    break;
+            }
+        }
+        catch (Exception e){
+            new SongView();
+        }
     }
 
 
     public SongView(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Song Menu");
+        System.out.println("\nSONG MENU");
         System.out.println("1: Show List Song");
         System.out.println("2: Creat Song");
         System.out.println("3: Update Song");
         System.out.println("4: Delete Song");
+        System.out.println("5: Song Rating");
         System.out.println("0: Back To Menu");
 
         try {
             int choice = Integer.parseInt(scanner.nextLine());
             while (choice != 0 && choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5 && choice != 6){
+                System.out.println("Enter Again");
                 new SongView();
             }
 
@@ -119,12 +177,16 @@ public class SongView {
                 case 4:
                     deleteSong();
                     break;
+                case 5:
+                    rankSong();
+                    break;
                 case 0:
                     new Main();
             }
         }
         catch (Exception e){
-            new SingerView();
+            System.out.println("Enter Again");
+            new SongView();
         }
 
 
@@ -135,7 +197,7 @@ public class SongView {
     }
     public void backMenu(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nEnter Any Character Go To Back SongView");
+        System.out.println("\nEnter Any Character Go To Back SONG MENU");
         System.out.println("1: Go Back MENU");
         System.out.println("0: Exit");
         try {

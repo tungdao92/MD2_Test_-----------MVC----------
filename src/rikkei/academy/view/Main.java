@@ -16,6 +16,7 @@ public class Main {
         try {
             int choice = Integer.parseInt(scanner.nextLine());
             while (choice != 1 && choice != 2 && choice != 0) {
+                System.out.println("Enter Again");
                 new Main();
             }
             switch (choice) {
@@ -30,6 +31,7 @@ public class Main {
                 default:
             }
         } catch (Exception e) {
+            System.out.println("Enter Again");
             new Main();
         }
     }

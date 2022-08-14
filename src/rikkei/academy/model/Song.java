@@ -1,5 +1,7 @@
 package rikkei.academy.model;
 
+import rikkei.academy.view.SongView;
+
 public class Song implements Comparable<Song>{
     private int id;
     private String name;
@@ -9,12 +11,12 @@ public class Song implements Comparable<Song>{
     public Song() {
     }
 
-    public Song(int id, String name, int listen, int like) {
+
+    public Song(int id, String name) {
         this.id = id;
         this.name = name;
-        this.listen = listen;
-        this.like = like;
     }
+
 
     public int getId() {
         return id;
@@ -60,6 +62,7 @@ public class Song implements Comparable<Song>{
 
     @Override
     public int compareTo(Song o) {
-        return 0;
+        return o.listen - this.listen;
     }
+
 }

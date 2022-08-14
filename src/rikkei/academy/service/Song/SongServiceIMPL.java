@@ -7,10 +7,15 @@ import java.util.List;
 public class SongServiceIMPL implements ISongService{
     public static List<Song> songList = new ArrayList<>();
     static {
-       songList.add(new Song(1,"Love",0,0));
-       songList.add(new Song(2,"Youu",0,0));
-       songList.add(new Song(3,"Like",0,0));
-       songList.add(new Song(4,"Meee",0,0));
+       songList.add(new Song(1,"Love"));
+       songList.add(new Song(2,"Youu"));
+       songList.add(new Song(3,"Like"));
+       songList.add(new Song(4,"Meee"));
+        for (Song song: songList) {
+            song.setListen((int) (Math.random()*1000)+500);;
+            song.setLike((int) (Math.random()*song.getListen()));
+        }
+
     }
 
 
@@ -45,6 +50,11 @@ public class SongServiceIMPL implements ISongService{
         return songs;
     }
 
+    @Override
+    public List<Song> sort() {
+        return null;
+    }
+
 
     @Override
     public List<Song> edit(int id, String name) {
@@ -53,18 +63,21 @@ public class SongServiceIMPL implements ISongService{
     }
 
     @Override
-    public List<Song> listen(int like) {
-        return null;
-    }
-
-
-
-    @Override
-    public List<Song> sort() {
+    public List<Song> listenRank() {
         Collections.sort(songList);
         updateId();
         return songList;
     }
+
+    @Override
+    public List<Song> likeRank() {
+        Collections.sort(songList);
+        updateId();
+        return songList;
+    }
+
+
+
     public void updateId() {
         for (int i = 0; i < songList.size(); i++) {
             songList.get(i).setId(i + 1);

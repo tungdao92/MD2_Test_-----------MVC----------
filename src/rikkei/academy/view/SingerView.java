@@ -117,7 +117,7 @@ public class SingerView {
 
     public SingerView(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("MENU Singer");
+        System.out.println("\nMENU SINGERr");
         System.out.println("1: Show List Singer");
         System.out.println("2: Creat Singer");
         System.out.println("3: Update Singer");
@@ -128,6 +128,7 @@ public class SingerView {
         try {
             int choiceMenu = scanner.nextInt();
             while (choiceMenu != 0 && choiceMenu != 1 && choiceMenu != 2 && choiceMenu != 3 && choiceMenu != 4 && choiceMenu != 5 && choiceMenu != 6){
+                System.out.println("Enter Again");
                 new SingerView();
             }
             switch (choiceMenu){
@@ -156,6 +157,7 @@ public class SingerView {
 
         }
         catch (Exception e){
+            System.out.println("Enter Again");
             new SingerView();
         }
     }
@@ -168,7 +170,7 @@ public class SingerView {
 
     public void backMenu(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nEnter Any Character Go To Back SingerView");
+        System.out.println("\nEnter Any Character Go To Back SINGER MENU");
         System.out.println("1: Go Back MENU");
         System.out.println("0: Exit");
         try {

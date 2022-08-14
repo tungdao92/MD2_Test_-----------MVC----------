@@ -7,7 +7,8 @@ import java.util.List;
 
 public interface ISongService extends IGeneric<Song> {
     List<Song> edit(int id, String name);
-    List<Song>listen(int like);
+    List<Song>listenRank();
+    List<Song>likeRank();
 
 
 
