@@ -17,6 +17,7 @@ public class SingerServiceIMPL implements ISingerService {
         singerList.add(new Singer(4,"Phuk", 24));
         singerList.add(new Singer(5,"BanG",20));
 
+
     }
 
 
@@ -61,9 +62,13 @@ public class SingerServiceIMPL implements ISingerService {
         updateId();
         return singerList;
     }
+
+
+
     public void updateId() {
         for (int i = 0; i < singerList.size(); i++) {
             singerList.get(i).setId(i + 1);
         }
     }
+
 }

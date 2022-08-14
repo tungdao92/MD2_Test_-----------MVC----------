@@ -10,7 +10,6 @@ public class SingerView {
 //    Scanner sc = new Scanner(System.in);
     SingerController  singerController = new SingerController();
     public void showSinger(){
-        Scanner scc = new Scanner(System.in);
         List<Singer> singerList = singerController.showSinger();
         System.out.println("|       STT       NAME           AGE        |");
         for (Singer singer: singerList) {
@@ -19,20 +18,7 @@ public class SingerView {
 //        for (int i = 0; i < singerList.size(); i++) {
 //            System.out.println("---------"+ singerList.get(i).getId()+ "-------" + singerList.get(i).getName()+ "-------" + singerList.get(i).getAge()+"-------");
 //        }
-        System.out.println("1: Go Back Menu Singer \n2: Go Back MENU \n3: Exit");
-        String back = scc.nextLine();
-        while (!back.equals("1") && !back.equals("2") && !back.equals("3")){
-            System.out.println("1: Go Back Menu Singer \n2: Go Back MENU \n3: Exit");
-            back = scc.nextLine();
-        }
-        if (back.equals("1")){
-            new SingerView();
-        }if (back.equals("2")){
-            new Main();
-        }if (back.equals("3")){
-
-            System.exit(0);
-        }
+     backMenu();
     }
 
 
@@ -49,19 +35,7 @@ public class SingerView {
         for (Singer singer: singerList) {
             System.out.println("        " + singer.getId() + "         " + singer.getName() + "           " + singer.getAge()+ "        " );
         }
-        System.out.println("1: Go Back Menu Singer \n2: Go Back MENU \n3: Exit");
-        String back = sc.nextLine();
-        while (!back.equals("1") && !back.equals("2") && !back.equals("3")){
-            System.out.println("1: Go Back Menu Singer \n2: Go Back MENU \n3: Exit");
-            back = sc.nextLine();
-        }
-        if (back.equals("1")){
-            new SingerView();
-        }if (back.equals("2")){
-            new Main();
-        }if (back.equals("3")){
-            System.exit(0);
-        }
+      backMenu();
     }
 
 
@@ -89,19 +63,7 @@ public class SingerView {
         for (Singer singer: singerList) {
             System.out.println("        " + singer.getId() + "         " + singer.getName() + "           " + singer.getAge()+ "        " );
         }
-        System.out.println("1: Go Back Menu Singer \n2: Go Back MENU \n3: Exit");
-        String back = sc.nextLine();
-        while (!back.equals("1") && !back.equals("2") && !back.equals("3")){
-            System.out.println("1: Go Back Menu Singer \n2: Go Back MENU \n3: Exit");
-            back = sc.nextLine();
-        }
-        if (back.equals("1")){
-            new SingerView();
-        }if (back.equals("2")){
-            new Main();
-        }if (back.equals("3")){
-            System.exit(0);
-        }
+        backMenu();
     }
 
 
@@ -120,72 +82,34 @@ public class SingerView {
         for (Singer singer: singerList) {
             System.out.println("        " + singer.getId() + "         " + singer.getName() + "           " + singer.getAge()+ "        " );
         }
-        System.out.println("1: Go Back Menu Singer \n2: Go Back MENU \n3: Exit");
-        String back = sc.nextLine();
-        while (!back.equals("1") && !back.equals("2") && !back.equals("3")){
-            System.out.println("1: Go Back Menu Singer \n2: Go Back MENU \n3: Exit");
-            back = sc.nextLine();
-        }
-        if (back.equals("1")){
-            new SingerView();
-        }if (back.equals("2")){
-            new Main();
-        }if (back.equals("3")){
-            System.exit(0);
-        }
+        backMenu();
     }
 
 
 
 
-    public void searchSinger(){
+    public void detailSinger(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Id Singer Want See: ");
-        int id = Integer.parseInt(sc.nextLine());
-        List<Singer> singers = singerController.searchSinger(id);
-        System.out.println("---------STT-------NAME---------AGE-------");
-
+        int idSee = Integer.parseInt(sc.nextLine());
+        List<Singer> singers = singerController.detailSinger(idSee);
+        System.out.println("|       STT       NAME           AGE        |");
         for (Singer singer: singers) {
             System.out.println("        " + singer.getId() + "         " + singer.getName() + "           " + singer.getAge()+ "        " );
         }
-        System.out.println("1: Go Back Menu Singer \n2: Go Back MENU \n3: Exit");
-        String back = sc.nextLine();
-        while (!back.equals("1") && !back.equals("2") && !back.equals("3")){
-            System.out.println("1: Go Back Menu Singer \n2: Go Back MENU \n3: Exit");
-            back = sc.nextLine();
-        }
-        if (back.equals("1")){
-            new SingerView();
-        }if (back.equals("2")){
-            new Main();
-        }if (back.equals("3")){
-            System.exit(0);
-        }
+        backMenu();
     }
 
 
 
 
     public void sortSinger(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("---------STT-------NAME---------AGE-------");
+        System.out.println("|       STT       NAME           AGE        |");
         List<Singer> singerList = singerController.sortSinger();
         for (Singer singer: singerList) {
             System.out.println("        " + singer.getId() + "         " + singer.getName() + "           " + singer.getAge()+ "        " );
         }
-        System.out.println("1: Go Back Menu Singer \n2: Go Back MENU \n3: Exit");
-        String back = sc.nextLine();
-        while (!back.equals("1") && !back.equals("2") && !back.equals("3")){
-            System.out.println("1: Go Back Menu Singer \n2: Go Back MENU \n3: Exit");
-            back = sc.nextLine();
-        }
-        if (back.equals("1")){
-            new SingerView();
-        }if (back.equals("2")){
-            new Main();
-        }if (back.equals("3")){
-            System.exit(0);
-        }
+       backMenu();
     }
 
 
@@ -220,7 +144,7 @@ public class SingerView {
                     editSinger();
                     break;
                 case 4:
-                    searchSinger();
+                    detailSinger();
                     break;
                 case 5:
                     removeSinger();
@@ -239,7 +163,30 @@ public class SingerView {
 
     private boolean isValid(int id){
         int size = singerController.showSinger().size();
-        return id >= 0 && id< size;
+        return id >= 0 && id<= size;
+    }
+
+    public void backMenu(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\nEnter Any Character Go To Back SingerView");
+        System.out.println("1: Go Back MENU");
+        System.out.println("0: Exit");
+        try {
+            int back = Integer.parseInt(scanner.nextLine());
+            while (back != 0 && back !=1){
+                new SingerView();
+            }
+            switch (back){
+                case 0:
+                    System.exit(0);
+                    break;
+                case 1:
+                    new Main();
+            }
+        }
+        catch (Exception e){
+            new SingerView();
+        }
     }
 
 }

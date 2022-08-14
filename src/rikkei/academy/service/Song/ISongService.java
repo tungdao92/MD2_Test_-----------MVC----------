@@ -6,6 +6,9 @@ import rikkei.academy.service.IGeneric;
 import java.util.List;
 
 public interface ISongService extends IGeneric<Song> {
-    List<Song> edit(int a, String b);
+    List<Song> edit(int id, String name);
+    List<Song>listen(int like);
+
+
 
 }

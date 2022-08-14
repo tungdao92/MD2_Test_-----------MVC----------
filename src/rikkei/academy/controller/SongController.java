@@ -28,6 +28,9 @@ public class SongController {
     public List<Song> deleteSong(int id){
         return iSongService.deleteById(id);
     }
+    public List<Song> detailSong(int id){
+        return iSongService.findById(id);
+    }
 
 
 }

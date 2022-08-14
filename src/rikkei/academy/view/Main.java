@@ -7,7 +7,7 @@ public class Main {
 
     public Main() {
 
-        System.out.println("MENU");
+        System.out.println("\nMENU   ");
         System.out.println("1: View Singer");
         System.out.println("2: View Song");
         System.out.println("0: Exit");
@@ -38,4 +38,5 @@ public class Main {
     public static void main(String[] args) {
         new Main();
     }
+
 }

@@ -21,7 +21,7 @@ public class SingerController {
         return iSingerService.edit(id, name, age);
     }
 
-    public List<Singer> searchSinger(int id){
+    public List<Singer>detailSinger(int id){
         return iSingerService.findById(id);
     }
     public List<Singer> sortSinger(){

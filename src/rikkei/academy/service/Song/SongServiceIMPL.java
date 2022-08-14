@@ -32,10 +32,17 @@ public class SongServiceIMPL implements ISongService{
         return songList;
     }
 
+
+
+
     @Override
     public List<Song> findById(int id) {
-        ;
-        return songList;
+        List<Song> songs = new ArrayList<>();
+        for (int i = 0; i < songList.size(); i++) {
+            songs.add(songList.get(id -1));
+            break;
+        }
+        return songs;
     }
 
 
@@ -44,6 +51,13 @@ public class SongServiceIMPL implements ISongService{
         songList.get(id -1).setName(name);
         return songList;
     }
+
+    @Override
+    public List<Song> listen(int like) {
+        return null;
+    }
+
+
 
     @Override
     public List<Song> sort() {
@@ -56,4 +70,12 @@ public class SongServiceIMPL implements ISongService{
             songList.get(i).setId(i + 1);
         }
     }
+
+
+
+
+
+
+
+
 }
